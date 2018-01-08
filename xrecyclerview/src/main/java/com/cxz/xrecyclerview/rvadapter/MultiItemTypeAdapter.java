@@ -5,9 +5,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.cxz.rvadapter.base.BaseItemDelegate;
-import com.cxz.rvadapter.base.BaseViewHolder;
-import com.cxz.rvadapter.base.ItemDelegateManager;
+import com.cxz.xrecyclerview.rvadapter.base.BaseItemDelegate;
+import com.cxz.xrecyclerview.rvadapter.base.BaseViewHolder;
+import com.cxz.xrecyclerview.rvadapter.base.ItemDelegateManager;
 
 import java.util.List;
 
