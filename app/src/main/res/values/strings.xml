@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">XRecyclerView</string>
+    <string name="action_settings">Setting</string>
 </resources>
