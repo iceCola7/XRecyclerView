@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion 27
@@ -6,7 +7,7 @@ android {
         minSdkVersion 15
         targetSdkVersion 27
         versionCode 1
-        versionName "1.0.0"
+        versionName "1.0.1"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -25,4 +26,14 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     testImplementation 'junit:junit:4.12'
     implementation 'com.android.support:recyclerview-v7:27.1.1'
+}
+
+publish {
+    repoName = 'maven'  // 仓库名，没有填写默认仓库是maven
+    userOrg = 'icecola7'  // bintray注册的用户名
+    groupId = 'com.cxz'  // implementation引用时的第1部分groupId
+    artifactId = 'xrecyclerview'  // implementation引用时的第2部分项目名
+    publishVersion = '1.0.1'  // implementation引用时的第3部分版本号
+    desc = 'Achieve RecyclerView drop-down refresh and load more.' // 项目描述
+    website = 'https://github.com/iceCola7/XRecyclerView'  // github 托管地址
 }
