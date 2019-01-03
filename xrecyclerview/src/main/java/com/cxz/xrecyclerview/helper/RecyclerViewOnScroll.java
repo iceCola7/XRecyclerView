@@ -8,10 +8,10 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import com.cxz.xrecyclerview.XRecyclerView;
 
 public class RecyclerViewOnScroll extends RecyclerView.OnScrollListener {
-    XRecyclerView mPullLoadMoreRecyclerView;
+    XRecyclerView mXRecyclerView;
 
-    public RecyclerViewOnScroll(XRecyclerView pullLoadMoreRecyclerView) {
-        this.mPullLoadMoreRecyclerView = pullLoadMoreRecyclerView;
+    public RecyclerViewOnScroll(XRecyclerView xRecyclerView) {
+        this.mXRecyclerView = xRecyclerView;
     }
 
     @Override
@@ -40,20 +40,20 @@ public class RecyclerViewOnScroll extends RecyclerView.OnScrollListener {
             firstVisibleItem = staggeredGridLayoutManager.findFirstVisibleItemPositions(lastPositions)[0];
         }
         if (firstVisibleItem == 0) {
-            if (!mPullLoadMoreRecyclerView.isLoadMore()) {
-                mPullLoadMoreRecyclerView.setPullRefreshEnable(true);
+            if (!mXRecyclerView.isLoadMore()) {
+                mXRecyclerView.setPullRefreshEnable(true);
             }
         } else {
-            mPullLoadMoreRecyclerView.setPullRefreshEnable(false);
+            mXRecyclerView.setPullRefreshEnable(false);
         }
 
         /**
          * Either horizontal or vertical
          */
-        if (!mPullLoadMoreRecyclerView.isRefresh() && mPullLoadMoreRecyclerView.isHasMore() && (lastVisibleItem >= totalItemCount - 1)
-                && !mPullLoadMoreRecyclerView.isLoadMore() && (dx > 0 || dy > 0)) {
-            mPullLoadMoreRecyclerView.setIsLoadMore(true);
-            mPullLoadMoreRecyclerView.loadMore();
+        if (!mXRecyclerView.isRefresh() && mXRecyclerView.isHasMore() && (lastVisibleItem >= totalItemCount - 1)
+                && !mXRecyclerView.isLoadMore() && (dx > 0 || dy > 0)) {
+            mXRecyclerView.setIsLoadMore(true);
+            mXRecyclerView.loadMore();
         }
 
     }

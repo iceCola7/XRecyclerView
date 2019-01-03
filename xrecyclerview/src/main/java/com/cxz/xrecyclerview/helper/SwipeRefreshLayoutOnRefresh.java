@@ -5,17 +5,18 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import com.cxz.xrecyclerview.XRecyclerView;
 
 public class SwipeRefreshLayoutOnRefresh implements SwipeRefreshLayout.OnRefreshListener {
-    XRecyclerView mPullLoadMoreRecyclerView;
 
-    public SwipeRefreshLayoutOnRefresh(XRecyclerView pullLoadMoreRecyclerView) {
-        this.mPullLoadMoreRecyclerView = pullLoadMoreRecyclerView;
+    XRecyclerView mXRecyclerView;
+
+    public SwipeRefreshLayoutOnRefresh(XRecyclerView xRecyclerView) {
+        this.mXRecyclerView = xRecyclerView;
     }
 
     @Override
     public void onRefresh() {
-        if (!mPullLoadMoreRecyclerView.isRefresh()) {
-            mPullLoadMoreRecyclerView.setIsRefresh(true);
-            mPullLoadMoreRecyclerView.refresh();
+        if (!mXRecyclerView.isRefresh()) {
+            mXRecyclerView.setIsRefresh(true);
+            mXRecyclerView.refresh();
         }
     }
 }
